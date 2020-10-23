@@ -24,7 +24,9 @@ constructor(
     private val _isViewLoading = MutableLiveData<Boolean>()
     val isViewLoading: LiveData<Boolean> = _isViewLoading
 
-    val onMessageError: SingleLiveEvent<Any> = SingleLiveEvent()
+    //    val onMessageError: SingleLiveEvent<Any> = SingleLiveEvent()
+    private val _onMessageError = MutableLiveData<Boolean>()
+    val onMessageError: LiveData<Boolean> = _onMessageError
 
     fun getUsers() {
         disposable.add(
@@ -33,10 +35,14 @@ constructor(
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
                                 {
+                                    _isViewLoading.value = true
+                                    Thread.sleep(2000)
                                     _users.value = it
+                                    _isViewLoading.value = false
+                                    _onMessageError.value = it.isEmpty()
                                 }, {
 
-                                }
+                        }
                         )
         )
     }

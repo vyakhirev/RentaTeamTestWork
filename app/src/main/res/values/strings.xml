@@ -18,4 +18,5 @@
     <string name="rentateam">Тестовое задание для Rentateam</string>
     <string name="Error_Loading_data">Error loading data</string>
     <string name="Error">Error</string>
+    <string name="data_is_loading">Data is loading…</string>
 </resources>

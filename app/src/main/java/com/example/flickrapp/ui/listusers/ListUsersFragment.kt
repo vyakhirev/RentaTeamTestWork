@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flickrapp.R
-import com.example.flickrapp.di.AppComponent.Companion.create
 import com.example.flickrapp.di.AppModule
 import com.example.flickrapp.di.viewmodel.DaggerViewModelComponent
 import com.example.flickrapp.ui.adapter.ListUsersAdapter
@@ -54,11 +53,30 @@ class ListUsersFragment : Fragment() {
         setupRecyclerView()
 
         viewModel.getUsers()
+
         viewModel.users.observe(
                 viewLifecycleOwner,
                 {
                     adapter.update(it)
+
                 })
+
+        viewModel.isViewLoading.observe(
+                viewLifecycleOwner,
+                {
+                    if (it == false) users_loading_PB.visibility = View.GONE
+                    else users_loading_PB.visibility = View.VISIBLE
+                })
+
+        viewModel.onMessageError.observe(
+                viewLifecycleOwner,
+                {
+                    if (it == true) {
+                        errorImg.visibility = View.VISIBLE
+                        errorTV.visibility = View.VISIBLE
+                    }
+                }
+        )
     }
 
     private fun setupRecyclerView() {

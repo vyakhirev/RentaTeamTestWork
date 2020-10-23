@@ -13,7 +13,7 @@ constructor(
         private val usersDao: UsersDao
 ) : Repository {
 
-    var cacheIsDirty = false
+    var cacheIsDirty = true
 
     override fun getUsers(): Single<List<UserItem>> {
 
