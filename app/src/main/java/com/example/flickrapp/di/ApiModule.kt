@@ -18,7 +18,6 @@ class ApiModule {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    // Not logging the authkey if not debug
     private val client = OkHttpClient()
             .newBuilder()
             .addInterceptor(loggingInterceptor)

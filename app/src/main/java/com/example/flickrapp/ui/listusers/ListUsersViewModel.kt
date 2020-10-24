@@ -15,7 +15,6 @@ constructor(
         private val repository: Repository
 ) : ViewModel() {
 
-
     var disposable = CompositeDisposable()
 
     private val _users = MutableLiveData<List<UserItem>>()
@@ -24,7 +23,6 @@ constructor(
     private val _isViewLoading = MutableLiveData<Boolean>()
     val isViewLoading: LiveData<Boolean> = _isViewLoading
 
-    //    val onMessageError: SingleLiveEvent<Any> = SingleLiveEvent()
     private val _onMessageError = MutableLiveData<Boolean>()
     val onMessageError: LiveData<Boolean> = _onMessageError
 

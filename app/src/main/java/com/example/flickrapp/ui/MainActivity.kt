@@ -8,6 +8,7 @@ import com.example.flickrapp.ui.listusers.ListUsersFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,7 +32,6 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.action_about -> {
-//                    nav_Controller.navigate(R.id.BigPhotoFragment)
                         openFragment(AboutFragment())
                         return@OnNavigationItemSelectedListener true
                     }
