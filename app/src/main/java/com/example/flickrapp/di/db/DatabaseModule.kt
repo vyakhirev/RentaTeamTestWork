@@ -28,24 +28,3 @@ class DatabaseModule(mApplication: Application) {
         return usersDatabase.usersDao()
     }
 }
-
-//@Module
-//class DatabaseModule(mApplication: Application) {
-//
-//    val context = mApplication
-//
-//    @Provides
-//    @Reusable
-//    fun provideUsersDao(usersDatabase: UsersDatabase): UsersDao {
-//        return usersDatabase.usersDao()
-//    }
-//
-//    @Provides
-//    @Singleton
-//    fun provideUserDatabase(): UsersDatabase {
-//        return Room.databaseBuilder(
-//                context,
-//                UsersDatabase::class.java, USERS_DATABASE_NAME
-//        ).build()
-//    }
-//}

@@ -14,10 +14,24 @@ class ListUsersAdapter(
 
         ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    companion object {
+        const val VIEW_TYPE_HEADER = 0
+        const val VIEW_TYPE_ITEM = 1
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position == 0) VIEW_TYPE_HEADER else VIEW_TYPE_ITEM
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolderUserItem(
-                LayoutInflater.from(context).inflate(R.layout.user_item, parent, false)
-        )
+        return if (viewType == VIEW_TYPE_HEADER)
+            HeaderViewHolder(LayoutInflater.from(context).inflate(R.layout.header_list_user, parent, false))
+        else
+            ViewHolderUserItem(
+                    LayoutInflater.from(context).inflate(R.layout.user_item, parent, false)
+            )
+
+
     }
 
     override fun getItemCount(): Int = users.size
@@ -32,10 +46,6 @@ class ListUsersAdapter(
             }
 
     }
-
-//    fun addItems(items: MutableList<UserItem?>) {
-//        items.addAll(items)
-//    }
 
     fun update(data: List<UserItem>) {
 //        val movieDiffUtilCallback = DiffCallback(photos, data)

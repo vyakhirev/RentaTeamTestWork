@@ -36,12 +36,13 @@ constructor(
                         .subscribe(
                                 {
                                     _isViewLoading.value = true
-                                    Thread.sleep(2000)
+                                    Thread.sleep(1000)
                                     _users.value = it
                                     _isViewLoading.value = false
                                     _onMessageError.value = it.isEmpty()
                                 }, {
-
+                            _isViewLoading.value = false
+                            _onMessageError.value = true
                         }
                         )
         )

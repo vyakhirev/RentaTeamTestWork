@@ -14,8 +14,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="TextView"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="46dp"
         tools:text="@string/StubForName" />
 
     <TextView
@@ -27,8 +25,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/first_name_onList_TV"
         android:text="TextView"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="46dp"
         tools:text="@string/StubForName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

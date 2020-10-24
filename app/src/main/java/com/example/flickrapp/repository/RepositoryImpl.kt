@@ -1,5 +1,6 @@
 package com.example.flickrapp.repository
 
+import android.util.Log
 import com.example.flickrapp.data.UserItem
 import com.example.flickrapp.repository.local.UsersDao
 import com.example.flickrapp.repository.remote.ApiService
@@ -13,9 +14,12 @@ constructor(
         private val usersDao: UsersDao
 ) : Repository {
 
-    var cacheIsDirty = true
-
     override fun getUsers(): Single<List<UserItem>> {
+
+        var cacheIsDirty = false
+
+        if ((0..6).random() < 3)
+            cacheIsDirty = true
 
         return if (cacheIsDirty)
             getFromRemote()
@@ -40,6 +44,7 @@ constructor(
     }
 
     private fun getFromRemote(): Single<List<UserItem>> {
+        Log.d("debug", "Get from remote")
         return apiService.getUsers()
                 .map {
                     it.data
@@ -47,7 +52,6 @@ constructor(
                 .doOnSuccess {
                     storeLocally(it)
                 }
-
     }
 
     private fun storeLocally(users: List<UserItem>) {
@@ -56,6 +60,7 @@ constructor(
     }
 
     private fun getFromLocal(): Single<List<UserItem>> {
+        Log.d("debug", "Get from local")
         return usersDao.getAllUsers()
 
     }
