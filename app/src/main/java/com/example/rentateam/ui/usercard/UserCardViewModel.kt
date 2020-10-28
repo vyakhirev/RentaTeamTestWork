@@ -1,4 +1,4 @@
-package com.example.rentateam.ui.userdetails
+package com.example.rentateam.ui.usercard
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

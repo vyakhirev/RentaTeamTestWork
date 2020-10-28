@@ -1,4 +1,4 @@
-package com.example.rentateam.ui.userdetails
+package com.example.rentateam.ui.usercard
 
 import android.os.Bundle
 import android.view.LayoutInflater

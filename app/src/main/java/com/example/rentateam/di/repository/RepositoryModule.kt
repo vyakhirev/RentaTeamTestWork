@@ -1,4 +1,4 @@
-package com.example.rentateam.di
+package com.example.rentateam.di.repository
 
 import com.example.rentateam.repository.Repository
 import com.example.rentateam.repository.RepositoryImpl

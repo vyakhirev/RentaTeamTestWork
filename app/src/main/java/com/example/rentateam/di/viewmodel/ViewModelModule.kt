@@ -3,7 +3,7 @@ package com.example.rentateam.di.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rentateam.ui.listusers.ListUsersViewModel
-import com.example.rentateam.ui.userdetails.UserCardViewModel
+import com.example.rentateam.ui.usercard.UserCardViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

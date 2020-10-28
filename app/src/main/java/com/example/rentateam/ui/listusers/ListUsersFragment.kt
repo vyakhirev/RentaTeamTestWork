@@ -12,7 +12,7 @@ import com.example.rentateam.R
 import com.example.rentateam.di.AppModule
 import com.example.rentateam.di.viewmodel.DaggerViewModelComponent
 import com.example.rentateam.ui.adapter.ListUsersAdapter
-import com.example.rentateam.ui.userdetails.UserCardFragment
+import com.example.rentateam.ui.usercard.UserCardFragment
 import kotlinx.android.synthetic.main.list_users_fragment.*
 import javax.inject.Inject
 

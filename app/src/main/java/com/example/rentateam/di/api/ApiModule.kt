@@ -1,4 +1,4 @@
-package com.example.rentateam.di
+package com.example.rentateam.di.api
 
 import com.example.rentateam.repository.remote.ApiService
 import dagger.Module

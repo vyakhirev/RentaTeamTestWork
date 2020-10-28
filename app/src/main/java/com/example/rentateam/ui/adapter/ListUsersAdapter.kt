@@ -27,7 +27,7 @@ class ListUsersAdapter(
         return if (viewType == VIEW_TYPE_HEADER)
             HeaderViewHolder(LayoutInflater.from(context).inflate(R.layout.header_list_user, parent, false))
         else
-            ViewHolderUserItem(
+            UserItemViewHolder(
                     LayoutInflater.from(context).inflate(R.layout.user_item, parent, false)
             )
 
@@ -37,10 +37,10 @@ class ListUsersAdapter(
     override fun getItemCount(): Int = users.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is ViewHolderUserItem)
+        if (holder is UserItemViewHolder)
             holder.bind(users[position])
 
-        if (holder is ViewHolderUserItem)
+        if (holder is UserItemViewHolder)
             holder.itemView.setOnClickListener {
                 userClick?.invoke(users[position])
             }
